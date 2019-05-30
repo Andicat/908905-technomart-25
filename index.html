@@ -8,115 +8,131 @@
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="wrap-page">
-			<header class="main-header">
-				<div class="main-header-info">
-					<a href="#" class="main-header-logo"><img src="img/logo.svg" width="110" height="19" alt="Техномарт"></a>
-					<a href="#" class="main-header-search">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="17" viewBox="0 0 17 17">
-							<path fill="#ffffff" fill-opacity="0.3" d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 7.5 0 1 0 7.5 15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467 4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 0 1 2 7.5z"/>
-						</svg>
-						<span>Поиск:</span>
-					</a>
-					<a href="#" class="main-header-bookmarks">
-						<svg xmlns="http://www.w3.org/2000/svg" width="45" height="17" viewBox="0 0 14 16">
-							<path fill="#ffffff" fill-opacity="0.3" d="M14 15c0 .55-.368.741-.818.426l-5.363-3.765c-.45-.315-1.187-.315-1.637 0L.818 15.426C.368 15.741 0 15.55 0 15V1c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v14z"/>
-						</svg>
-						<span>Закладки: 0</span>
-					</a>
-					<a href="#" class="main-header-cart">
-						<svg xmlns="http://www.w3.org/2000/svg" width="50" height="17" viewBox="0 0 15 15">
-							<circle fill="#ffffff" fill-opacity="0.3" cx="4.5" cy="13.5" r="1.5"/>
-							<circle fill="#ffffff" fill-opacity="0.3" cx="12.5" cy="13.5" r="1.5"/>
-							<path fill="#ffffff" fill-opacity="0.3" d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z"/>
-						</svg>
-						<span>Корзина: 0</span>
-					</a>
-					<a href="#" class="main-header-order">Оформить заказ</a>
+		<header class="main-header">
+			<div class="main-header-info">
+				<a href="#" class="main-header-logo">
+					<img src="img/logo.svg" width="110" height="19" alt="Техномарт">
+				</a>
+				<form class="main-header-search" action="catalog.html" method="post" name="search">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="17" viewBox="0 0 17 17">
+						<path fill="#ffffff" fill-opacity="0.3" d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 7.5 0 1 0 7.5 15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467 4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 0 1 2 7.5z"/>
+					</svg>
+					<input type="text" name="Search" id="DateIn" value="Поиск">
+				</form>
+				</a>
+				<a href="#" class="main-header-bookmarks">
+					<svg xmlns="http://www.w3.org/2000/svg" width="45" height="17" viewBox="0 0 14 16">
+						<path fill="#ffffff" fill-opacity="0.3" d="M14 15c0 .55-.368.741-.818.426l-5.363-3.765c-.45-.315-1.187-.315-1.637 0L.818 15.426C.368 15.741 0 15.55 0 15V1c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v14z"/>
+					</svg>
+					<span>Закладки: 0</span>
+				</a>
+				<a href="#" class="main-header-cart">
+					<svg xmlns="http://www.w3.org/2000/svg" width="50" height="17" viewBox="0 0 15 15">
+						<circle fill="#ffffff" fill-opacity="0.3" cx="4.5" cy="13.5" r="1.5"/>
+						<circle fill="#ffffff" fill-opacity="0.3" cx="12.5" cy="13.5" r="1.5"/>
+						<path fill="#ffffff" fill-opacity="0.3" d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z"/>
+					</svg>
+					<span>Корзина: 0</span>
+				</a>
+				<a href="#" class="main-header-order">Оформить заказ</a>
+			</div>
+			<div class="main-header-center">
+				<span class="main-header-description">Интернет-магазин строительных материалов и инструментов для ремонта</span>
+				<div class="main-header-contacts">
+					<a href="#" class="main-header-phone">+7 (812) 555-05-55</a>
+					<span class="main-header-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</span>
 				</div>
-				<div class="main-header-center">
-					<span class="main-header-description">Интернет-магазин строительных материалов <br> и инструментов для ремонта</span>
-					<div class="main-header-contacts">
-						<span class="main-header-phone">+7 (812) 555-05-55</span>
-						<span class="main-header-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</span>
+				<div class="main-header-enter">
+					<a href="#" class="main-header-enter-login">
+						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="17" viewBox="0 0 20 17">
+							<path fill="#c5c5c5" d="M14.875 8.5L6 0v6H0v5h6v6z"/>
+							<path fill="#c5c5c5" d="M16.986 15.01h-5.027V17h5.027c2.178 0 3.004-1.81 3.029-3.026V3.028C19.99 1.811 19.164 0 16.986 0h-5.027v1.99h5.027c.839 0 .992.681 1.01 1.057v10.904c-.017.376-.171 1.059-1.01 1.059z"/>
+						</svg>
+						<span>Войти</span>
+					</a>
+					<a href="#" class="main-header-enter-reg">Регистрация</a>
+				</div>
+			</div>
+			<nav class="main-navigation">
+				<ul class="main-navigation-list">
+					<li>
+						<a href="#">Главная</a>
+					</li>
+					<li>
+						<a href="#">Компания</a>
+					</li>
+					<li>
+						<a href="catalog.html">Каталог</a>
+					</li>
+					<li>
+						<a href="#">Новости</a>
+					</li>
+					<li>
+						<a href="#">Спецпредложения</a>
+					</li>
+					<li>
+						<a href="#">Доставка</a>
+					</li>
+					<li>
+						<a href="#">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section class="features">
+				<h2 class="visually-hidden">Наши главные преимущества</h2>
+				<div class="features-section">
+					<div class="features-item item-1">
+						<h3>Материалы</h3>
+						<a href="#">На любой вкус</a>
 					</div>
-					<div class="main-header-enter">
-						<a href="#" class="main-header-enter-login">
-							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="17" viewBox="0 0 20 17">
-								<path fill="#c5c5c5" d="M14.875 8.5L6 0v6H0v5h6v6z"/>
-								<path fill="#c5c5c5" d="M16.986 15.01h-5.027V17h5.027c2.178 0 3.004-1.81 3.029-3.026V3.028C19.99 1.811 19.164 0 16.986 0h-5.027v1.99h5.027c.839 0 .992.681 1.01 1.057v10.904c-.017.376-.171 1.059-1.01 1.059z"/>
-							</svg>
-							<span>Войти</span>
-						</a>
-						<a href="#" class="main-header-enter-reg">Регистрация</a>
+					<div class="features-item item-2">
+						<h3>Инструмент</h3>
+						<a href="#">На все случаи</a>
+					</div>
+					<div class="features-slider">
+						<input class="visually-hidden" type="radio" id="slide-1" name="toggle" checked>
+						<input class="visually-hidden" type="radio" id="slide-2" name="toggle">
+						<div class="features-slider-buttons">
+							<label for="slide-1">Первый</label>
+							<label for="slide-2">Второй</label>
+						</div>
+						<div class="features-slider-controls">
+							<label for="slide-1">Первый</label>
+							<label for="slide-2">Второй</label>
+						</div>
+						<div class="features-slider-list">
+							<ul>
+								<li class="sfeatures-lider-item slide" id="slide1">
+									<h3>Дрели</h3>
+									<p>Соседям на радость!</p>
+									<a href="#">Открыть каталог</a>
+								</li>
+								<li class="features-slider-item slide" id="slide2">
+									<h3>Перфораторы</h3>
+									<p>Соседям на радость!</p>
+									<a href="#">Открыть каталог</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-				<nav class="main-navigation">
-					<ul class="main-navigation-list">
-						<li><a href="#">Главная</a></li>
-						<li><a href="#">Компания</a></li>
-						<li><a href="catalog.html">Каталог</a></li>
-						<li><a href="#">Новости</a></li>
-						<li><a href="#">Спецпредложения</a></li>
-						<li><a href="#">Доставка</a></li>
-						<li><a href="#">Контакты</a></li>
-					</ul>
-				</nav>
-			</header>
-			<main>
-				<section class="features">
-					<h2 class="visually-hidden">Наши главные преимущества</h2>
-					<div class="features-section">
-						<div class="features-item item-1">
-							<h3>Материалы</h3>
-							<a href="#">На любой вкус</a>
-						</div>
-						<div class="features-item item-2">
-							<h3>Инструмент</h3>
-							<a href="#">На все случаи</a>
-						</div>
-						<div class="features-slider">
-							<input class="visually-hidden" type="radio" id="slide-1" name="toggle" checked>
-							<input class="visually-hidden" type="radio" id="slide-2" name="toggle">
-							<div class="features-slider-controls">
-								<label for="slide-1">Первый</label>
-								<label for="slide-2">Второй</label>
-							</div>
-							<div class="features-slider-list">
-								<ul>
-									<li class="sfeatures-lider-item slide" id="slide1">
-										<h3>Дрели</h3>
-										<p>Соседям на радость!</p>
-										<a href="#">Открыть каталог</a>
-									</li>
-									<li class="features-slider-item slide" id="slide2">
-										<h3>Перфораторы</h3>
-										<p>Соседям на радость!</p>
-										<a href="#">Открыть каталог</a>
-									</li>
-								</ul>
-							</div>
-						</div>
+				<div class="features-section">
+					<div class="features-item item-3">
+						<h3>Техника</h3>
+						<a href="#">Для стройки</a>
 					</div>
-					<div class="features-section">
-						<div class="features-item item-3">
-							<h3>Техника</h3>
-							<a href="#">Для стройки</a>
-						</div>
-						<div class="features-item item-4">
-							<h3>Скидки 50%</h3>
-							<a href="#">На 350 товаров</a>
-						</div>
-						<div class="features-item item-5">
-							<h3>Доставка</h3>
-							<a href="#">Бесплатно</a>
-						</div>
+					<div class="features-item item-4">
+						<h3>Скидки 50%</h3>
+						<a href="#">На 350 товаров</a>
 					</div>
-				</section>
-
-				
-
-</main>
-	
+					<div class="features-item item-5">
+						<h3>Доставка</h3>
+						<a href="#">Бесплатно</a>
+					</div>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>
