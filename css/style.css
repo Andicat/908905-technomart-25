@@ -110,10 +110,11 @@ a {
 	margin: 0px 130px;
 }
 
-.main-header-description {
+.main-header-center h1 {
 	width: 196px;
 	font-size: 16px;
 	font-style: italic;
+	font-weight: normal;
 	text-align: left;
 	line-height: 23px;
 	color: #ee3643;
@@ -241,7 +242,7 @@ a {
 	padding: 20px 30px;
 }
 
-/***************************************************************** header hover focus*/
+/***************************************************************** header hover focus */
 .main-header-logo:hover,
 .main-header-logo:focus {
 	background-color: #ca2c37;
@@ -262,7 +263,9 @@ a {
 .main-header-bookmarks:hover path,
 .main-header-bookmarks:focus path,
 .main-header-cart:hover path,
-.main-header-cart:focus path {
+.main-header-cart:hover circle,
+.main-header-cart:focus path,
+.main-header-cart:focus circle {
 	fill-opacity: 1;
 }
 
@@ -303,7 +306,7 @@ a {
 	outline: none;
 }
 
-/***************************************************************** header active*/
+/***************************************************************** header active */
 .main-header-logo:active {
 	background-color: #ba2732;
 }
@@ -315,7 +318,8 @@ a {
 }
 
 .main-header-bookmarks:active path,
-.main-header-cart:active path {
+.main-header-cart:active path,
+.main-header-cart:active circle {
 	fill-opacity: 0.5;
 }
 
@@ -359,10 +363,12 @@ a {
 	color: rgba(0, 0, 0, 0.3);
 }
 
-/***************************************************************** FEATURES */
+/***************************************************************** features */
 .features {
-	padding: 49px 120px 30px 120px;
-	margin: 0px;
+	max-width: 960px;
+	padding: 0;
+	padding-top: 49px;
+	margin: 0 auto 44px;
 	background-color: #ffffff;
 	display: flex;
 	justify-content: space-between;
@@ -412,7 +418,6 @@ a {
 }
 
 .item-1 {
-	position: relative;
 	background-color: #ffbf47;
 	background-image: url("../img/icon-1.svg");
 	background-repeat: no-repeat;
@@ -420,7 +425,7 @@ a {
 	background-size: 44px 65px;
 }
 
-.item-1::before  {
+.new::before  {
 	content: "";
 	position: absolute;
 	width: 60px;
@@ -428,7 +433,7 @@ a {
 	background-color: transparent;
 	background-image: url("../img/new.png");
 	right: 0px;
-	z-index: 1;
+	z-index: 10;
 }
 
 .item-2 {
@@ -610,7 +615,7 @@ a {
 	background-image: url("../img/features-slide-image-2.jpg");
 }
 
-/***************************************************************** features hover focus*/
+/***************************************************************** features hover focus */
 .features-item a:hover {
 	background-color: rgba(0,0,0,0.2);
 	outline: none;
@@ -621,7 +626,7 @@ a {
 	outline: none;
 }
 
-/***************************************************************** features active*/
+/***************************************************************** features active */
 .features-item a:active {
 	background-color: rgba(0,0,0,0.3);
 }
@@ -630,4 +635,228 @@ a {
 	background-color: #ba2732;
 }
 
-/*	font-family: 'PT Sans', sans-serif;
+
+/***************************************************************** popular items */
+
+.popular-items {
+	max-width: 940px;
+	margin: 0 auto;
+}
+
+.popular-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f9f5f0;
+	padding: 25px 24px;
+	margin: 10px 0;
+}
+
+.popular-header h2 {
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #32425c;
+	text-align: left;
+	margin: 0px;
+	padding-left: 4px;
+}
+
+.popular-header a {
+	min-width: 233px;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #ffffff;
+	text-align: center;
+	padding: 11px 10px 9px 10px;
+	background-color: #ee3643;
+	border-radius: 2px;
+}
+
+.popular-items-list {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.popular-item {
+	position: relative;
+	font-family: "PT Sans", "Arial", sans-serif;
+	width: 218px;
+	min-height: 316px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	border: solid 1px #eaeaea;
+	margin: 10px 0;
+}
+
+.popular-item h3 {
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: bold;
+	color: #000000;
+	text-align: center;
+	margin: 0;
+	padding: 9px 30px;
+}
+
+.item-price {
+	font-size: 17px;
+	line-height: 18px;
+	font-weight: bold;
+	color: #a9a9a9;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: line-through;
+	margin: 0;
+	padding: 2px 30px 10px;
+}
+
+.item-discount {
+	position: relative;
+	width: 88px;
+	font-size: 17px;
+	line-height: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #ffffff;
+	text-align: left;
+	padding: 10px 0 10px 35px;
+	background-color: #ee3643;
+	border-radius: 2px;
+	margin: auto 36px 21px 28px;
+}
+
+.item-discount::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: -18px;
+  border: 19px solid #ee3643;
+  border-right-width: 0;
+  border-left-color: #ee3643;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.popular-item + .new::before {
+	right: -1px;
+	top: -1px;
+}
+
+.popular-item-actions {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 218px;
+	height: 170px;
+	padding: 40px 0;
+	background-color: #ffffff;
+	z-index: 5;
+}
+
+.item-buy,
+.item-bookmark {
+	display: flex;
+	width: 129px;
+	margin: 0 auto;
+	margin-bottom: 7px;
+	padding: 7px 0;
+	background-color: #63a63e;
+	border: 3px solid #63a63e;
+	border-bottom-color: #367315;
+	border-radius:3px;
+	color: white;
+	font-size: 14px;
+	font-weight: normal;
+	font-family: "Cuprum", sans-serif;
+	line-height: 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.item-buy span {
+	padding-left: 15px;
+}
+	
+.item-bookmark {
+	display: block;
+	color: #32425c;
+	background: white;
+	border-bottom-color: #63a63e;
+}
+
+/***************************************************************** popular items hover focus*/
+.popular-item:hover,
+.popular-brand:hover {
+	box-shadow: 0px 10px 25px 0 rgba(41, 52, 73, 0.5);
+}
+
+.popular-item:hover .popular-item-actions {
+  display: block;
+}
+
+.item-buy:hover {
+	background-color: #5fbb2d;
+	border: 3px solid #5fbb2d;
+	border-bottom-color: #367315;
+}
+
+.item-buy:hover path,
+.item-buy:hover circle {
+	fill-opacity: 1;
+}
+
+.item-bookmark:hover {
+	border-color: #32425c;
+}
+
+/***************************************************************** popular items active*/
+
+.item-buy:active {
+	background-color: #518534;
+	border: 3px solid #518534;
+}
+
+.item-bookmark:active,
+.popular-brand:active {
+	opacity: 0.3;
+}
+
+/***************************************************************** popular brands*/
+
+.popular-brands {
+	max-width: 940px;
+	margin: 0 auto;
+}
+
+.popular-brands-list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.popular-brand {
+	width: 218px;
+	height: 143px;
+	border: solid 1px #eaeaea;
+	margin: 10px 0;
+}
+
+.popular-brand a {
+	display: table-cell;
+	width: 218px;
+	height: 143px;
+	vertical-align: middle;
+}
