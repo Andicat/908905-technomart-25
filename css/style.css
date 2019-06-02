@@ -637,7 +637,8 @@ a {
 }
 
 .features-slider-list a:hover,
-.services-slider-item a:hover {
+.services-slider-item a:hover,
+.company a:not(.map):hover {
 	background-color: #ca2c37;
 	outline: none;
 }
@@ -648,7 +649,8 @@ a {
 }
 
 .features-slider-list a:active,
-.services-slider-item a:active {
+.services-slider-item a:active,
+.company a:not(.map):active {
 	background-color: #ba2732;
 }
 
