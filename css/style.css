@@ -101,12 +101,9 @@ a {
 .main-header-bookmarks svg {
 	padding: 0 13px 0 17px;
 }
-.catalog-header-cart {
-	display: flex;
-	justify-content: flex-start;
+
+.full-cart {
 	background-color: #ee3643;
-	min-width: 150px;
-	padding: 12px 0;
 }
 
 .main-header-order {
@@ -194,30 +191,29 @@ a {
 	margin-left: 10px;
 }
 
-.catalog-header-enter-login {
-	display: flex;
+.login {
 	justify-content: space-between;
-	align-items: center;
 	width: 300px;
 	height: 45px;
-	background-color: #ffffff;
+	margin: 0;
 }
 
-.catalog-header-enter-login span {
+.login span {
 	flex-grow: 1;
 }
 
-.catalog-header-enter-orders,
-.catalog-header-enter-account {
+.main-header-enter-orders,
+.main-header-enter-account {
 	position: relative;
 	font-size: 16px;
 	line-height: 18px;
 	text-align: left;
 	text-decoration: underline;
-	padding: 8px 15px 8px 18px;
+	padding: 7px 15px 6px 18px;
+	color: #000000;
 }
 
-.catalog-header-enter-orders::after {
+.main-header-enter-orders::after {
 	content: "";
 	position: absolute;
 	left: 100%;
@@ -276,6 +272,11 @@ a {
 	outline: none;
 }
 
+.full-cart:hover,
+.full-cart:focus {
+	background-color: #ca2c37;
+}
+
 .main-header-search:hover path,
 .main-header-bookmarks:hover path,
 .main-header-bookmarks:focus path,
@@ -307,14 +308,10 @@ a {
 	background-color: #293449;
 }
 
-.catalog-header-enter-login:hover path {
-	fill: #32425C;
-}
-
-.catalog-header-enter-orders:hover,
-.catalog-header-enter-orders:focus,
-.catalog-header-enter-account:hover,
-.catalog-header-enter-account:focus {
+.main-header-enter-orders:hover,
+.main-header-enter-orders:focus,
+.main-header-enter-account:hover,
+.main-header-enter-account:focus {
 	color: #ee3643;
 	outline: none;
 }
@@ -328,6 +325,10 @@ a {
 .main-header-cart:active {
 	background-color: #161d29;
 	color: rgba(255, 255, 255, 0.6);
+}
+
+.full-cart:active {
+	background-color: #ba2732;
 }
 
 .main-header-bookmarks:active path,
@@ -369,14 +370,13 @@ a {
 	color: rgba(255, 255, 255, 0.5);
 }
 
-.main-header-enter-login:active path,
-.catalog-header-enter-login:active path {
+.main-header-enter-login:active path {
 	fill: #c5c5c5;
 }
 
-.catalog-header-enter-login:active,
-.catalog-header-enter-orders:active,
-.catalog-header-enter-account:active {
+.main-header-enter-login:active,
+.main-header-enter-orders:active,
+.main-header-enter-account:active {
 	color: rgba(0, 0, 0, 0.3);
 }
 
