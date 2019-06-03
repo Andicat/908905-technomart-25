@@ -121,7 +121,8 @@ a {
 	margin: 0 auto;
 }
 
-.main-header-center h1 {
+.main-header-center h1,
+.main-header-center p {
 	width: 197px;
 	font-size: 16px;
 	font-style: italic;
@@ -1260,18 +1261,78 @@ a {
 	outline: none;
 }
 
-.footer-navigation a:active {
-	text-decoration: none;
-	opacity: 0.5;
-}
-
 .social-button:hover,
 .social-button:active {
 	background-color: #ee3643;
 	outline: none;
 }
 
+/***************************************************************** footer active*/
+
+.footer-navigation a:active {
+	text-decoration: none;
+	opacity: 0.5;
+}
+
 .footer-external a:active {
 	text-decoration: none;
 	color: #ee3643;
+}
+
+/***************************************************************** catalog breadcrumbs*/
+
+.catalog-breadcrumbs {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	max-width: 940px;
+	margin: 20px auto;
+	padding: 0;
+	list-style: none;
+	font-family: "PT Sans", "Arial", sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	text-transform: uppercase;
+	color: #000000;
+}
+
+.catalog-breadcrumbs a {
+	color: #000000; 
+}
+
+.catalog-breadcrumbs li {
+	position: relative;
+	margin-right: 40px;
+}
+
+.catalog-breadcrumbs li::before {
+	content: "";
+	width: 14px;
+	height: 12px;
+	background-image: url("../img/icon-right-small.svg"); 
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 3px;
+	left: -25px;
+	width: 8px;
+	height: 12px;
+}
+
+.catalog-breadcrumbs li:first-child a {
+	display: block;
+	width: 14px;
+	height: 18px;
+	background-image: url("../img/icon-home.svg"); 
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 14px 12px;
+	font-size: 0;
+}
+
+.catalog-breadcrumbs li:first-child::before {
+	display: none;
+}
+
+.catalog-header {
+	
 }
