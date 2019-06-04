@@ -4,13 +4,17 @@ body {
 	line-height: 21px;
 	color: #000000;
 	text-align: center;
-	width: 1200px;
-	margin: 0 auto;
 	background-color: #ffffff;
+	margin: 0;
 }
 
 a {
 	text-decoration: none;
+}
+
+.center-aligned {
+	max-width: 940px;
+	margin: 0 auto;
 }
 
 .visually-hidden {
@@ -24,9 +28,15 @@ a {
 }
 
 /***************************************************************** header */
-.main-header {
-	min-height: 320px;
+.main-header-prime {
+	height: 42px;
+	background-color: #293449;
+}
+
+.main-header-other {
+	min-height: 172px;
 	background-color: #f4f7f9;
+	padding: 47px 0 60px 0;
 }
 
 .main-header-info {
@@ -38,7 +48,6 @@ a {
 	line-height: 18px;
 	text-align: left;
 	background-color: #293449;
-	padding: 0 130px;
 }
 
 .main-header-info a {
@@ -113,12 +122,10 @@ a {
 }
 
 .main-header-center {
-	max-width: 940px;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	padding: 46px 0 35px 0;
-	margin: 0 auto;
+	margin-bottom: 35px;
 }
 
 .main-header-center h1,
@@ -226,8 +233,6 @@ a {
 }
 
 .main-navigation {
-	max-width: 940px;
-	margin: 0 auto;
 	font-size: 17px;
 	line-height: 17px;
 	color: #ffffff;
@@ -383,11 +388,8 @@ a {
 
 /***************************************************************** features */
 .features {
-	max-width: 960px;
-	padding: 0;
-	padding-top: 49px;
-	margin: 0 auto 44px;
-	background-color: #ffffff;
+	margin-top: 58px;
+	margin-bottom: -20px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -395,9 +397,8 @@ a {
 .features-section {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
-	margin: 0;
-	padding: 0;
+	justify-content: space-between;
+	flex-basis: 0;
 }
 
 .features-item {
@@ -408,7 +409,7 @@ a {
 	align-items: flex-start;
 	background-color: #ffffff;
 	position: relative;
-	margin: 10px;
+	margin-bottom: 20px;
 }
 
 .features-item h3 {
@@ -497,10 +498,10 @@ a {
 	width: 620px;
 	height: 266px;
 	background-color: #333333;
-	margin: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	margin-bottom: 20px;
 }
 
 .features-slider h3 {
@@ -664,19 +665,18 @@ a {
 
 
 /***************************************************************** popular items */
-
 .popular-items {
-	max-width: 940px;
-	margin: 0 auto;
+	margin-top: 53px;
 }
 
 .popular-header {
+	min-height: 38px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background-color: #f9f5f0;
-	padding: 25px 24px;
-	margin: 10px 0 11px 0;
+	padding: 25px 24px 26px 28px;
+	margin-bottom: 20px;
 }
 
 .popular-header h2 {
@@ -687,7 +687,6 @@ a {
 	color: #32425c;
 	text-align: left;
 	margin: 0;
-	padding-left: 4px;
 }
 
 .popular-header a {
@@ -705,6 +704,7 @@ a {
 
 .popular-items-list {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	list-style: none;
 	padding: 0;
@@ -721,7 +721,7 @@ a {
 	flex-wrap: wrap;
 	align-items: center;
 	border: solid 1px #eaeaea;
-	margin: 10px 0;
+	margin-bottom: 20px;
 }
 
 .popular-item h3 {
@@ -859,12 +859,6 @@ a {
 }
 
 /***************************************************************** popular brands*/
-
-.popular-brands {
-	max-width: 940px;
-	margin: 0 auto;
-}
-
 .popular-brands-list {
 	display: flex;
 	justify-content: space-between;
@@ -878,21 +872,21 @@ a {
 	width: 218px;
 	height: 143px;
 	border: solid 1px #eaeaea;
-	margin: 10px 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 20px;
 }
 
 /***************************************************************** services*/
-
 .services {
 	min-height: 522px;
 	background-color: #f4f7f9;
-	display: flex;
-	flex-direction: column;
-	padding: 0 130px;
-	margin-top: 75px;
+	margin-top: 65px;
+}
+
+.services-container {
+	padding-top: 66px;
 }
 
 .services h2 {
@@ -901,7 +895,6 @@ a {
 	font-weight: normal;
 	text-transform: uppercase;
 	text-align: left;
-	padding-top: 66px;
 	margin: 0;
 	margin-bottom: 25px;
 }
@@ -913,7 +906,7 @@ a {
 	line-height: 24px;
 	text-align: left;
 	margin: 0;
-	margin-bottom: 69px;
+	margin-bottom: 70px;
 }
 
 .services-block {
@@ -953,6 +946,7 @@ a {
 
 .services-slider-list {
 	height: 285px;
+	padding-left: 80px;
 	flex-grow: 1;
 	background-repeat: no-repeat;
 	background-position: bottom right; 
@@ -961,13 +955,7 @@ a {
 .services-slider-list ul {
 	list-style: none;
 	margin: 0;
-	padding-left: 80px;
-}
-
-.services-slider-item {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
+	padding: 0;
 }
 
 .services-slider-item h3 {
@@ -978,10 +966,10 @@ a {
 	color: #32425c;
 	text-transform: uppercase;
 	margin: 0;
-	margin-bottom: 23px;
+	margin-bottom: 25px;
 }
 
-.services-slider-item p{
+.services-slider-item p {
 	width: 379px;
 	margin: 0;
 }
@@ -1046,10 +1034,8 @@ a {
 
 .company {
 	display: flex;
-	max-width: 940px;
-	min-height: 371px;
-	margin: 0 auto;
-	padding: 77px 0 87px;
+	min-height: 373px;
+	margin-top: 78px;
 }
 
 .company-about-us {
@@ -1085,7 +1071,11 @@ a {
 	letter-spacing: normal;
 	text-align: left;
 	margin: 0;
-	margin-bottom: 23px;
+	margin-bottom: 25px;
+}
+
+.company h3 {
+	margin-bottom: 24px;
 }
 
 .company-about-us p {
@@ -1148,21 +1138,26 @@ a {
 }
 
 /***************************************************************** footer*/
+.footer-prime {
+	background-color: #32425c;
+	margin-top: 86px;
+}
+
+.footer-other {
+	background-color: #293449;
+}
 
 .footer-navigation {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	height: 143px;
 	font-size: 18px;
 	font-weight: normal;
 	line-height: 24px;
 	text-align: left;
 	color: #f1f5f7;
-	background-color: #32425c;
-	margin: 0;
-	padding: 0 130px 50px;
+	height: 145px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
 
 .main-footer-logo {
@@ -1209,9 +1204,8 @@ a {
 	line-height: 18px;
 	text-align: left;
 	color: #ffffff;
-	background-color: #293449;
 	margin: 0;
-	padding: 31px 130px;
+	padding: 31px 0;
 }
 
 .footer-external p {
@@ -1285,8 +1279,6 @@ a {
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
-	max-width: 940px;
-	margin: 20px auto;
 	padding: 0;
 	list-style: none;
 	font-family: "PT Sans", "Arial", sans-serif;
