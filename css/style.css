@@ -1510,20 +1510,156 @@ a {
 /***************************************************************** catalog main*/
 
 .catalog-main {
-	background-color: #f2f6f8;
 	display: flex;
-	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	margin-top: 20px;
 }
 
 .catalog-filter {
-	background-color: yellow;
-	height: 100%;
-	width: 300px;
+	width: 220px;
+	font-family: "PT Sans", "Arial", sans-serif;
+	font-size: 17px;
+	line-height: 30px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
 }
 
-.catalog-sorting {
+.catalog-filter legend {
+	padding: 0;
+	margin-bottom: 13px;
+}
+
+.catalog-filter h3 {
+	box-sizing: border-box;
+	background-color: #f7f3ec;
+	font-size: 13px;
+	line-height: 18px;
+	text-align: left;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin: 0;
+	margin-bottom: 13px;
+	padding: 14px 18px 15px 18px;
+}
+
+.catalog-filter fieldset {
+	padding: 0;
+	padding-bottom: 25px;
+	margin: 0;
+	margin-bottom: 15px;
+	border: none;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.catalog-filter fieldset:last-child {
+	border: none; 
+}
+
+.catalog-filter-price-slider {
+	position: relative;
+	height: 80px;
+	background-color: #f7f3ec;
+	margin-bottom: 9px;
+}
+
+.catalog-filter-price-slider::before,
+.catalog-filter-price-slider::after {
+	content: "";
+	position: absolute;
+	width: 180px;
+	height: 2px;
+	background-color: #d7dcde;
+	top: 50%;
+	left: 20px;
+}
+
+.catalog-filter-price-slider::after {
+	width: 150px;
+	height: 2px;
+	background-color: #03c678;
+}
+
+.catalog-filter-price-slider-min,
+.catalog-filter-price-slider-max{
+	width: 4px;
+	height: 4px;
+	background-color: #9c9c9c;
+	border: 8px solid #ffffff;
+	border-radius: 50%;
+	box-shadow: 0 2px 1px 0 rgba(0,0,0,0.1);
+	position: absolute;
+	top: 31px;
+	z-index: 5;
+}
+
+.catalog-filter-price-slider-min {
+	left: 10px;
+}
+
+.catalog-filter-price-slider-max {
+	right: 40px;
+}
+
+.catalog-filter-price {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.catalog-filter-price::after {
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 1px;
+	background-color: #000000;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.catalog-filter-price input {
+	padding: 0;
+	font-size: 17px;
+	line-height: 38px;
+	background-color: #f7f3ec;
+	width: 95px;
+	border-style: none;
+	text-align: center;
+}
+
+.catalog-filter ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.catalog-filter-option {
+	padding-bottom: 17px;
+}
+
+.catalog-filter-option label {
+	height: 23px;
+	position: relative;
+	cursor: pointer;
+	font-size: 15px;
+	line-height: 23px;
+	font-weight: normal;
+	margin-left: 40px;
+}
+
+.catalog-filter-option label::before {
+	content: "";
+	position: absolute;
+	background-image: url("../img/checkbox-off.svg");
+	background-repeat: no-repeat;
+	width: 27px; 
+	height: 23px;
+	left: -40px;
+	z-index: 1;
+}
+
+/*.catalog-sorting {
 	background-color: green;
 	height: 30px;
 	width: 300px;

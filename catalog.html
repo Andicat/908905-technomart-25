@@ -106,9 +106,64 @@
 				<h2 >Перфораторы</h2>
 			</header>
 			<section class="catalog-main center-aligned">
-				<div class="catalog-filter"></div>
-				<div class="catalog-sorting"></div>
-				<div class="catalog-list"></div>
+				<div class="catalog-filter">
+					<h3>Фильтр:</h3>
+					<form>
+						<fieldset>
+							<legend>Цена:</legend>
+							<div class="catalog-filter-price-slider">
+								<div class="catalog-filter-price-slider-min"></div>
+								<div class="catalog-filter-price-slider-max"></div>
+							</div>
+							<div class="catalog-filter-price">
+								<input type="text" name="PriceMin" id="PriceMin" value="0">
+								<input type="text" name="PriceMax" id="PriceMax" value="30000">
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Производители:</legend>
+							<ul>
+								<li class="catalog-filter-option">
+									<input class="visually-hidden" type="checkbox" name="Bosch" id="Bosch" checked>
+									<label for="Bosch">Bosch</label>
+								</li>
+								<li class="catalog-filter-option">
+									<input class="visually-hidden" type="checkbox" name="Interscol" id="Interscol">
+									<label for="Interscol">Интерскол</label>
+								</li>
+								<li class="catalog-filter-option">
+									<input class="visually-hidden" type="checkbox" name="Makita" id="Makita" checked>
+									<label for="Makita">Makita</label>
+								</li>
+								<li class="catalog-filter-option">
+									<input class="visually-hidden" type="checkbox" name="Dewalt" id="Dewalt">
+									<label for="Dewalt">Dewalt</label>
+								</li>
+								<li class="catalog-filter-option">
+									<input class="visually-hidden" type="checkbox" name="Hitachi" id="Hitachi">
+									<label for="Hitachi">Hitachi</label>
+								</li>
+							</ul>
+						</fieldset>
+						<fieldset>
+							<legend>Питание:</legend>
+							<ul>
+								<li class="catalog-filter-option">
+									<input class="visually-hidden" type="radio-option" name="Battery" id="Battery" checked>
+									<label for="Battery">Аккумуляторные</label>
+								</li>
+								<li class="catalog-filter-option">
+									<input class="visually-hidden" type="radio-option" name="Power" id="Power">
+									<label for="Power">Сетевые</label>
+								</li>
+							</ul>
+						</fieldset>
+						<button class="filter-button" type="submit">Показать</button>
+					</form>
+				</div>
+				<div class="catalog-list">
+					<div class="catalog-sorting"></div>
+				</div>
 			</section>
 			
 		</main>
