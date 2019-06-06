@@ -1279,59 +1279,7 @@ a {
 	color: #ee3643;
 }
 
-/***************************************************************** catalog breadcrumbs*/
-
-.catalog-breadcrumbs {
-	display: flex;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	padding: 0;
-	list-style: none;
-	font-family: "PT Sans", "Arial", sans-serif;
-	font-size: 13px;
-	line-height: 18px;
-	text-transform: uppercase;
-	color: #000000;
-}
-
-.catalog-breadcrumbs a {
-	color: #000000; 
-}
-
-.catalog-breadcrumbs li {
-	position: relative;
-	margin-right: 40px;
-}
-
-.catalog-breadcrumbs li::before {
-	content: "";
-	width: 14px;
-	height: 12px;
-	background-image: url("../img/icon-right-small.svg"); 
-	background-repeat: no-repeat;
-	position: absolute;
-	top: 3px;
-	left: -25px;
-	width: 8px;
-	height: 12px;
-}
-
-.catalog-breadcrumbs li:first-child a {
-	display: block;
-	width: 14px;
-	height: 18px;
-	background-image: url("../img/icon-home.svg"); 
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 14px 12px;
-	font-size: 0;
-}
-
-.catalog-breadcrumbs li:first-child::before {
-	display: none;
-}
-
-/***************************************************************** modal */
+/***************************************************************** index modal */
 
 .modal {
 	display: none;
@@ -1495,3 +1443,97 @@ a {
 	background-repeat: no-repeat;
 
 }
+
+/***************************************************************** catalog header*/
+.catalog-breadcrumbs {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	padding: 25px 0;
+	list-style: none;
+	font-family: "PT Sans", "Arial", sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	text-transform: uppercase;
+	color: #000000;
+	margin: 0;
+}
+
+.catalog-breadcrumbs a {
+	color: #000000; 
+}
+
+.catalog-breadcrumbs li {
+	position: relative;
+	margin-right: 40px;
+}
+
+.catalog-breadcrumbs li::before {
+	content: "";
+	width: 14px;
+	height: 12px;
+	background-image: url("../img/icon-right-small.svg"); 
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 3px;
+	left: -25px;
+	width: 8px;
+	height: 12px;
+}
+
+.catalog-breadcrumbs li:first-child a {
+	display: block;
+	width: 14px;
+	height: 18px;
+	background-image: url("../img/icon-home.svg"); 
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 14px 12px;
+	font-size: 0;
+}
+
+.catalog-breadcrumbs li:first-child::before {
+	display: none;
+}
+
+.catalog-header h2 {
+	box-sizing: border-box;
+	background-color: #f2f6f8;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: normal;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 32px 30px 34px 30px;
+	margin: 0;
+}
+/***************************************************************** catalog main*/
+
+.catalog-main {
+	background-color: #f2f6f8;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.catalog-filter {
+	background-color: yellow;
+	height: 100%;
+	width: 300px;
+}
+
+.catalog-sorting {
+	background-color: green;
+	height: 30px;
+	width: 300px;
+}
+
+.catalog-list {
+	background-color: orange;
+	height: 200px;
+	width: 300px;
+}
+
+
+
