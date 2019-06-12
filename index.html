@@ -138,8 +138,8 @@
 				<ul class="items-list">
 					<li class="item">
 						<div class="item-actions">
-							<a href="#" class="item-buy">Купить</a>
-							<a href="#" class="item-bookmark">В закладки</a>
+							<a class="item-buy">Купить</a>
+							<a class="item-bookmark">В закладки</a>
 						</div>
 						<img src="img/image-bosch-bfg-9000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 9000">
 						<h3>Перфоратор BOSCH BFG 9000</h3>
@@ -148,8 +148,8 @@
 					</li>
 					<li class="item">
 						<div class="item-actions">
-							<a href="#" class="item-buy">Купить</a>
-							<a href="#" class="item-bookmark">В закладки</a>
+							<a class="item-buy">Купить</a>
+							<a class="item-bookmark">В закладки</a>
 						</div>
 						<img src="img/image-bosch-bfg-3000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
 						<h3>Перфоратор BOSCH BFG 3000</h3>
@@ -158,8 +158,8 @@
 					</li>
 					<li class="item">
 						<div class="item-actions">
-							<a href="#" class="item-buy">Купить</a>
-							<a href="#" class="item-bookmark">В закладки</a>
+							<a class="item-buy">Купить</a>
+							<a class="item-bookmark">В закладки</a>
 						</div>
 						<img src="img/image-bosch-bfg-6000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 6000">
 						<h3>Перфоратор BOSCH BFG 6000</h3>
@@ -168,8 +168,8 @@
 					</li>
 					<li class="item new">
 						<div class="item-actions">
-							<a href="#" class="item-buy">Купить</a>
-							<a href="#" class="item-bookmark">В закладки</a>
+							<a class="item-buy">Купить</a>
+							<a class="item-bookmark">В закладки</a>
 						</div>
 						<img src="img/image-bosch-bfg-2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
 						<h3>Перфоратор BOSCH BFG 2000</h3>
@@ -276,10 +276,10 @@
 				<div class="company-address">
 					<h2>Контакты</h2>
 					<p>Вы можете забрать товар сами, заехав в наш офис:</p>
-					<a href="#" class="map">
+					<a class="map" href="https://goo.gl/maps/8WgoqQgGQAgH7uj9A">
 						<img src="img/map.jpg" width="300" height="158" alt="Наш адрес: ул.Большая Конюшенная, 19">
 					</a>
-					<a class="red-button" href="#">Заблудились? Напишите нам!</a>
+					<a class="red-button message" href="#">Заблудились? Напишите нам!</a>
 				</div>				
 			</section>
 		</main>
@@ -355,21 +355,21 @@
 		</footer>
 		<section class="modal modal-message">
 			<button class="modal-button-close" type="button">Закрыть</button>
-			<form class="modal-message-form" action="#" action="index.html" method="post" name="message">
-				<fieldset>
+			<form action="#" action="index.html" method="post" name="message">
+				<div class="modal-message-form">
 					<div class="modal-message-name">
 						<label for="name">Ваше имя:</label>
-						<input type="text" name="name" id="name" placeholder="Имя Фамилия">
+						<input type="text" name="name" id="name" placeholder="Имя Фамилия" value="">
 					</div>
 					<div class="modal-message-email">
 						<label for="email">Ваш e-mail:</label>
-						<input type="text" name="email" id="email" placeholder="email@example.com">
+						<input type="text" name="email" id="email" placeholder="email@example.com" value="">
 					</div>
 					<div class="modal-message-content">
 						<label for="content">Текст письма:</label>
 						<textarea  id="content" rows="5" placeholder="В свободной форме"></textarea>
 					</div>
-				</fieldset>
+				</div>
 				<div class="modal-action">
 					<button class="red-button" type="submit">Отправить</button>	
 				</div>
@@ -377,7 +377,16 @@
 		</section>
 		<section class="modal modal-map">
 			<button class="modal-button-close" type="button">Закрыть</button>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3997.0650851076325!2d30.311303036659734!3d59.93989859045567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0KDQvtGB0YHQuNGPLCAxOTExODY!5e0!3m2!1sru!2sby!4v1559732977316!5m2!1sru!2sby" width="940" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3997.0650851076325!2d30.311303036659734!3d59.93989859045567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0KDQvtGB0YHQuNGPLCAxOTExODY!5e0!3m2!1sru!2sby!4v1559732977316!5m2!1sru!2sby" width="940" height="440" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</section>
+		<section class="modal modal-order">
+			<button class="modal-button-close" type="button">Закрыть</button>
+			<h2>Товар добавлен в корзину!</h2>
+			<div class="modal-action">
+				<a href="#" class="order">Оформить заказ</a>
+				<a href="#" class="continue">Продолжить покупки</a>
+			</div>
+		</section>
+		<script src="js/script.js"></script>
 	</body>
 </html>
