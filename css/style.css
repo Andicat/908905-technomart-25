@@ -903,14 +903,6 @@ a {
 	color: #32425c;
 }
 
-.services-buttons label[for="service-1"]:hover,
-.services-buttons label[for="service-2"]:hover,
-.services-buttons label[for="service-3"]:hover {
-	border-bottom-color: #293449;
-	border-top-color: #405069;
-	background-color: #293449;
-}
-
 #service-1:checked ~ .services-slider-list {
 	background-image: url("../img/delivery.png");
 }
@@ -1421,24 +1413,8 @@ a {
 	background-image: url("../img/radio-off.svg"); 
 }
 
-.catalog-filter-option input:hover + label::before {
-	opacity: 0.29;
-}
-
 .catalog-filter-option input:disabled + label::before {
 	opacity: 0.09;
-}
-
-.catalog-filter-price-slider-min:hover,
-.catalog-filter-price-slider-min:focus,
-.catalog-filter-price-slider-max:hover,
-.catalog-filter-price-slider-max:focus {
-	border: 9px solid #ffffff;
-	box-shadow: 0 2px 0 0 rgba(255,255,255,0.3);
-	border-radius: 50%;
-	position: absolute;
-	top: 30px;
-	cursor: pointer;
 }
 
 .catalog-filter-form button {
@@ -1587,17 +1563,18 @@ a {
 	box-shadow: 0px 20px 40px 0 rgba(41, 52, 73, 0.75);
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
 	z-index: 10;
 }
 
 .modal-show {
 	display: block;
-	animation: modal-show 0.6s;
+	animation: show 0.3s;
+	animation-fill-mode: both;
 }
 
 .modal-error {
-	animation: modal-error 0.6s;
+	animation: error 0.3s;
+	animation-fill-mode: both;
 }
 
 .modal-button-close {
@@ -1637,18 +1614,6 @@ a {
 .modal-button-close:active {
 	outline: none;
 }
-
-.modal-button-close:hover::before,
-.modal-button-close:focus::before,
-.modal-button-close:hover::after,
-.modal-button-close:focus::after {
-	background-color: #ca2c37;
-}
-
-.modal-button-close:active::before,
-.modal-button-close:active::after {
-	background-color: #ba2732;
-}	
 
 .modal-message {
 	width: 620px;
@@ -1709,7 +1674,7 @@ a {
 .modal-message-content textarea {
 	box-sizing: border-box;
 	width: 100%;
-	height: 114px;
+	min-height: 114px;
 	border: solid 2px #dee3e4;
 	border-radius: 2px;
 	margin-top: 10px;
@@ -1737,7 +1702,6 @@ a {
 
 .modal-map {
 	width: 940px;
-	min-height: 446px;
 	background-color: #565656;
 	background-image: url("../img/big-map.jpg");
 	background-repeat: no-repeat;
@@ -1831,7 +1795,7 @@ a {
 }
 
 .main-header-search:hover,
-.main-header-search:hover input,
+.main-header-search:focus,
 .main-header-bookmarks:hover,
 .main-header-bookmarks:focus,
 .main-header-cart:hover,
@@ -1972,6 +1936,14 @@ a {
 	opacity: 0.3;
 }
 
+.services-buttons label[for="service-1"]:hover,
+.services-buttons label[for="service-2"]:hover,
+.services-buttons label[for="service-3"]:hover {
+	border-bottom-color: #293449;
+	border-top-color: #405069;
+	background-color: #293449;
+}
+
 .footer-navigation a[href]:hover,
 .footer-navigation a[href]:focus,
 .footer-external a:hover,
@@ -2029,6 +2001,22 @@ a {
 	border-right-color: transparent;
 }
 
+.catalog-filter-option input:hover + label::before {
+	opacity: 0.29;
+}
+
+.catalog-filter-price-slider-min:hover,
+.catalog-filter-price-slider-min:focus,
+.catalog-filter-price-slider-max:hover,
+.catalog-filter-price-slider-max:focus {
+	border: 9px solid #ffffff;
+	box-shadow: 0 2px 0 0 rgba(255,255,255,0.3);
+	border-radius: 50%;
+	position: absolute;
+	top: 30px;
+	cursor: pointer;
+}
+
 .pagination-item[href]:hover,
 .pagination-item[href]:focus,
 .catalog-filter-form button:hover,
@@ -2041,6 +2029,18 @@ a {
 .catalog-filter-form button:active {
 	border-color: #ee3643;
 }
+
+.modal-button-close:hover::before,
+.modal-button-close:focus::before,
+.modal-button-close:hover::after,
+.modal-button-close:focus::after {
+	background-color: #ca2c37;
+}
+
+.modal-button-close:active::before,
+.modal-button-close:active::after {
+	background-color: #ba2732;
+}	
 
 .modal-message-name input:hover,
 .modal-message-email input:hover,
@@ -2084,29 +2084,27 @@ a {
 	color: rgba(0, 0, 0, 0.3);
 }
 
+.center-aligned *:hover {
+	transition: 0.3s ease;
+}
 
-@keyframes modal-show {
+/***********************************************/
+
+@keyframes show {
 	0% {
-		transform: translateY(-2000px);
+		transform: scale(0) translate(-50%,-100px);
+		opacity: 0;
 	}
-
-	70% {
-		transform: translateY(30px);
-	}
-	
-	90% {
-		transform: translateY(-10px);
-	}
-	
 	100% {
-		transform: translateY(0);
+		transform: scale(1) translate(-50%,-50%);
+		opacity: 1;
 	}
 }
 
-@keyframes modal-error {
+@keyframes error {
 	0%,
 	100% {
-		transform: translateX(0);
+		transform: translate(-50%,-50%);
 	}
 
 	10%,
@@ -2114,13 +2112,17 @@ a {
 	50%,
 	70%,
 	90% {
-		transform: translateX(-10px);
+		transform: translate(-52%,-50%);
 	}
 
 	20%,
 	40%,
 	60%,
 	80% {
-		transform: translateX(10px);
+		transform: translate(-48%,-50%);
 	}
 }
+
+
+
+

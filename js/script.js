@@ -21,6 +21,8 @@ var storageUserName			= "";
 var storageUserEmail		= "";
 var storageMessageContent	= "";
 
+var TimeToClose;
+
 //проверка работы хранилища  
 try {
 	storageUserName 		= localStorage.getItem("UserName");
@@ -67,6 +69,17 @@ if (messageForm) {
 				messageForm.classList.remove("modal-error");
 				messageForm.offsetWidth = messageForm.offsetWidth;
 				messageForm.classList.add("modal-error");
+				if (!UserName.value) {
+					UserName.focus();
+				} else {
+					if (!UserEmail.value) {
+						UserEmail.focus();
+					} else {
+						if (MessageContent.value == "") {
+							MessageContent.focus();
+						}
+					}
+				}
 			}
 		else
 			{
@@ -107,6 +120,11 @@ for (var i = 0; i < orderLinksList.length; i++) {
 	orderLink.addEventListener("click", function (evt) {
 		evt.preventDefault();
 		orderForm.classList.add("modal-show");
+		//закрытие окна покупки через 5 секунд
+		TimeToClose = 5000;
+		setTimeout(function() {
+			orderForm.classList.remove("modal-show");
+		}, TimeToClose);
 	});
 }
 
@@ -115,17 +133,6 @@ closeOrderForm.addEventListener("click", function (evt) {
 	evt.preventDefault();
 	orderForm.classList.remove("modal-show");
 });
-
-//закрытие окна покупки через 5 секунд
-function close5() {
-	if (orderForm) {
-		if (orderForm.classList.contains("modal-show")) {
-			orderForm.classList.remove("modal-show");
-		}
-	}	
-}
-
-setTimeout(close5, 100);
 
 /***************************************************************** закрытие всех окон по esc*/
 
