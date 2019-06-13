@@ -11,6 +11,7 @@ var closeMapForm;
 
 var orderForm				= document.querySelector(".modal-order");
 var closeOrderForm			= orderForm.querySelector(".modal-button-close");
+var closeOrderFormContinue	= orderForm.querySelector(".continue");
 
 var UserName;
 var UserEmail;
@@ -133,6 +134,13 @@ closeOrderForm.addEventListener("click", function (evt) {
 	evt.preventDefault();
 	orderForm.classList.remove("modal-show");
 });
+
+//закрытие окна покупки по ссылке "Продолжить покупки"
+closeOrderFormContinue.addEventListener("click", function (evt) {
+	evt.preventDefault();
+	orderForm.classList.remove("modal-show");
+});
+
 
 /***************************************************************** закрытие всех окон по esc*/
 
