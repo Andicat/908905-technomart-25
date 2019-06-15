@@ -1098,7 +1098,6 @@ a {
 	display: block;
 }
 
-
 .service-1:checked ~ .services-buttons label[for="service-1"],
 .service-2:checked ~ .services-buttons label[for="service-2"],
 .service-3:checked ~ .services-buttons label[for="service-3"] {

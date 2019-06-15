@@ -1,120 +1,101 @@
-var messageLink				= document.querySelector(".message");
-var mapLink					= document.querySelector(".map");
-var orderLinksList			= document.querySelectorAll(".item-buy");
+var messageLink = document.querySelector(".message");
+var mapLink = document.querySelector(".map");
+var orderLinksList = document.querySelectorAll(".item-buy");
 var orderLink;
-
-var messageForm				= document.querySelector(".modal-message");
+var messageForm = document.querySelector(".modal-message");
 var closeMessageForm;
-
-var mapForm					= document.querySelector(".modal-map");
+var mapForm = document.querySelector(".modal-map");
 var closeMapForm;
-
-var orderForm				= document.querySelector(".modal-order");
-var closeOrderForm			= orderForm.querySelector(".modal-button-close");
-var closeOrderFormContinue	= orderForm.querySelector(".continue");
-
-var UserName;
-var UserEmail;
-var MessageContent;
-
-var isStorageSupport		= true;
-var storageUserName			= "";
-var storageUserEmail		= "";
-var storageMessageContent	= "";
-
-var TimeToClose;
+var orderForm = document.querySelector(".modal-order");
+var closeOrderForm = orderForm.querySelector(".modal-button-close");
+var closeOrderFormContinue = orderForm.querySelector(".continue");
+var userName;
+var userEmail;
+var messageContent;
+var isStorageSupport = true;
+var storageuserName = "";
+var storageuserEmail = "";
+var storagemessageContent = "";
+var timerId;
 
 //проверка работы хранилища  
 try {
-	storageUserName 		= localStorage.getItem("UserName");
-	storageUserEmail 		= localStorage.getItem("UserEmail");
-	storageMessageContent 	= localStorage.getItem("MessageContent");
+	storageuserName = localStorage.getItem("userName");
+	storageuserEmail = localStorage.getItem("userEmail");
+	storagemessageContent = localStorage.getItem("messageContent");
 } catch (err) {
 	isStorageSupport = false;
 }
 
-/***************************************************************** формы отправки сообщения*/
+//форма отправки сообщения
 
-if (messageForm) {
-	closeMessageForm = messageForm.querySelector(".modal-button-close");
-	UserName		 = messageForm.querySelector("[id=name]");
-	UserEmail		 = messageForm.querySelector("[id=email]");
-	MessageContent	 = messageForm.querySelector("[id=content]");
-}
-
-//открытие формы отправки сообщения по кнопке
 if (messageLink) {
+	closeMessageForm = messageForm.querySelector(".modal-button-close");
+	userName		 = messageForm.querySelector("[id=name]");
+	userEmail		 = messageForm.querySelector("[id=email]");
+	messageContent	 = messageForm.querySelector("[id=content]");
+	
+	//открытие формы отправки сообщения по кнопке
 	messageLink.addEventListener("click", function (evt) {
 		evt.preventDefault();
 		messageForm.classList.add("modal-show");
-		UserName.focus();
+		userName.focus();
 	});
-}
 
-//закрытие формы отправки сообщения по кнопке-крестику
-if (closeMessageForm) {
+	//закрытие формы отправки сообщения по кнопке-крестику
 	closeMessageForm.addEventListener("click", function (evt) {
 		evt.preventDefault();
 		messageForm.classList.remove("modal-show");
 		messageForm.classList.remove("modal-error");
 	});
-}
 
-//проверка полей формы отправки сообщения
-if (messageForm) {
+	//проверка полей формы отправки сообщения
 	messageForm.addEventListener("submit", function (evt) {
-		if (!UserName.value || !UserEmail.value || MessageContent.value == "")
+		if (!userName.value || !userEmail.value || messageContent.value == "")
 			{
 				evt.preventDefault();
 				console.log("Заполните ваше имя, обратный электронный адрес и текст письма");
 				messageForm.classList.remove("modal-error");
 				messageForm.offsetWidth = messageForm.offsetWidth;
 				messageForm.classList.add("modal-error");
-				if (!UserName.value) {
-					UserName.focus();
+				if (!userName.value) {
+					userName.focus();
 				} else {
-					if (!UserEmail.value) {
-						UserEmail.focus();
+					if (!userEmail.value) {
+						userEmail.focus();
 					} else {
-						if (MessageContent.value == "") {
-							MessageContent.focus();
+						if (messageContent.value == "") {
+							messageContent.focus();
 						}
 					}
 				}
+		} else {
+			if (isStorageSupport) {
+				localStorage.setItem("userName", userName.value);
+				localStorage.setItem("userEmail", userEmail.value);
 			}
-		else
-			{
-				if (isStorageSupport) {
-					localStorage.setItem("UserName", UserName.value);
-					localStorage.setItem("UserEmail", UserEmail.value);
-				}
-			}
+		}
 	});
 }
 
-/***************************************************************** карта*/
-if (mapForm) {
-	closeMapForm = mapForm.querySelector(".modal-button-close");
-}
-
-//открытие карты по ссылке
+//карта
 if (mapLink) {
+	closeMapForm = mapForm.querySelector(".modal-button-close");
+	
+	//открытие карты по ссылке
 	mapLink.addEventListener("click", function (evt) {
 		evt.preventDefault();
 		mapForm.classList.add("modal-show");
 	});
-}
-
-//закрытие карты по кнопке-крестику
-if (closeMapForm) {
+	
+	//закрытие карты по кнопке-крестику
 	closeMapForm.addEventListener("click", function (evt) {
 		evt.preventDefault();
 		mapForm.classList.remove("modal-show");
 	});
 }
 
-/***************************************************************** окно покупки*/
-
+//окно покупки
 //открытие окна покупки по ссылке
 for (var i = 0; i < orderLinksList.length; i++) {
 	orderLink = orderLinksList[i];
@@ -122,10 +103,10 @@ for (var i = 0; i < orderLinksList.length; i++) {
 		evt.preventDefault();
 		orderForm.classList.add("modal-show");
 		//закрытие окна покупки через 5 секунд
-		TimeToClose = 5000;
-		setTimeout(function() {
+		clearTimeout(timerId);
+		timerId = setTimeout(function() {
 			orderForm.classList.remove("modal-show");
-		}, TimeToClose);
+		}, 5000);
 	});
 }
 
@@ -141,8 +122,6 @@ closeOrderFormContinue.addEventListener("click", function (evt) {
 	orderForm.classList.remove("modal-show");
 });
 
-
-/***************************************************************** закрытие всех окон по esc*/
 
 //закрытие модальных окон по esc
 window.addEventListener("keydown", function (evt) {
