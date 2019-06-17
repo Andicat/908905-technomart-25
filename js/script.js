@@ -1,14 +1,14 @@
 var messageLink = document.querySelector(".message");
 var mapLink = document.querySelector(".map");
+var messageForm = document.querySelector(".modal-message");
+var mapForm = document.querySelector(".modal-map");
+var orderForm = document.querySelector(".modal-order");
+var closeOrderFormContinue = orderForm.querySelector(".continue");
 var orderLinksList = document.querySelectorAll(".item-buy");
 var orderLink;
-var messageForm = document.querySelector(".modal-message");
-var closeMessageForm;
-var mapForm = document.querySelector(".modal-map");
-var closeMapForm;
-var orderForm = document.querySelector(".modal-order");
-var closeOrderForm = orderForm.querySelector(".modal-button-close");
-var closeOrderFormContinue = orderForm.querySelector(".continue");
+var closeButtonsList = document.querySelectorAll(".modal-button-close");
+var closeButtonLink;
+var close;
 var userName;
 var userEmail;
 var messageContent;
@@ -28,25 +28,16 @@ try {
 }
 
 //форма отправки сообщения
-
 if (messageLink) {
-	closeMessageForm = messageForm.querySelector(".modal-button-close");
-	userName		 = messageForm.querySelector("[id=name]");
-	userEmail		 = messageForm.querySelector("[id=email]");
-	messageContent	 = messageForm.querySelector("[id=content]");
+	userName = messageForm.querySelector("[id=name]");
+	userEmail = messageForm.querySelector("[id=email]");
+	messageContent = messageForm.querySelector("[id=content]");
 	
 	//открытие формы отправки сообщения по кнопке
 	messageLink.addEventListener("click", function (evt) {
 		evt.preventDefault();
 		messageForm.classList.add("modal-show");
 		userName.focus();
-	});
-
-	//закрытие формы отправки сообщения по кнопке-крестику
-	closeMessageForm.addEventListener("click", function (evt) {
-		evt.preventDefault();
-		messageForm.classList.remove("modal-show");
-		messageForm.classList.remove("modal-error");
 	});
 
 	//проверка полей формы отправки сообщения
@@ -80,23 +71,13 @@ if (messageLink) {
 
 //карта
 if (mapLink) {
-	closeMapForm = mapForm.querySelector(".modal-button-close");
-	
-	//открытие карты по ссылке
 	mapLink.addEventListener("click", function (evt) {
 		evt.preventDefault();
 		mapForm.classList.add("modal-show");
 	});
-	
-	//закрытие карты по кнопке-крестику
-	closeMapForm.addEventListener("click", function (evt) {
-		evt.preventDefault();
-		mapForm.classList.remove("modal-show");
-	});
 }
 
 //окно покупки
-//открытие окна покупки по ссылке
 for (var i = 0; i < orderLinksList.length; i++) {
 	orderLink = orderLinksList[i];
 	orderLink.addEventListener("click", function (evt) {
@@ -110,18 +91,25 @@ for (var i = 0; i < orderLinksList.length; i++) {
 	});
 }
 
-//закрытие окна покупки по кнопке-крестику
-closeOrderForm.addEventListener("click", function (evt) {
-	evt.preventDefault();
-	orderForm.classList.remove("modal-show");
-});
+//закрытие модальных окон по кнопке закрытия
+for (var i = 0; i < closeButtonsList.length; i++) {
+	closeButtonLink = closeButtonsList[i];
+	closeButtonLink.addEventListener("click", function (evt) {
+		close = evt.target;
+		if (close.parentNode.classList.contains("modal-show")) {
+				close.parentNode.classList.remove("modal-show");
+		}
+		if (close.parentNode.classList.contains("modal-error")) {
+				close.parentNode.classList.remove("modal-error");
+		}
+	});
+}
 
 //закрытие окна покупки по ссылке "Продолжить покупки"
 closeOrderFormContinue.addEventListener("click", function (evt) {
 	evt.preventDefault();
 	orderForm.classList.remove("modal-show");
 });
-
 
 //закрытие модальных окон по esc
 window.addEventListener("keydown", function (evt) {
