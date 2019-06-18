@@ -1736,8 +1736,6 @@ a {
 }
 
 .catalog-filter-option label {
-	display: inline-block;
-	vertical-align: top;
 	position: relative;
 	cursor: pointer;
 	padding: 2px 0 2px 35px;
