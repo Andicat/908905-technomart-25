@@ -822,6 +822,7 @@ a {
 }
 
 .popular-header h2 {
+	max-width: 540px;
 	font-size: 30px;
 	line-height: 30px;
 	font-weight: 400;
@@ -829,10 +830,11 @@ a {
 	color: #32425c;
 	text-align: left;
 	margin: 0;
+	margin-right: 20px;
 }
 
 .popular-header a {
-	min-width: 233px;
+	width: 233px;
 }
 
 .items-list {
@@ -1219,6 +1221,10 @@ a {
 	margin-bottom: 26px;
 }
 
+.company-address h2 {
+	width: 300px;
+}
+
 .company p,
 .company h3 {
 	width: 180px;
@@ -1253,10 +1259,12 @@ a {
 .company-about-us ul {
 	padding-left: 36px;
 	margin: 0;
+	max-width: 500px;
+	list-style: none;
 }
 
 .company-about-us li{
-	list-style: none;
+	
 	position: relative;
 	font-size: 18px;
 	line-height: 20px;
@@ -1464,6 +1472,7 @@ a {
 	margin: 0 11px 0 0;
 }
 
+.footer-email p,
 .footer-auth p {
 	width: 100%;
 }
@@ -1727,6 +1736,8 @@ a {
 }
 
 .catalog-filter-option label {
+	display: inline-block;
+	vertical-align: top;
 	position: relative;
 	cursor: pointer;
 	padding: 2px 0 2px 35px;
