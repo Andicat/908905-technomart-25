@@ -277,6 +277,7 @@ a {
 .main-header-phone {
 	position: relative;
 	display: inline-block;
+	vertical-align: middle;
 	width: 183px;
 	font-size: 21px;
 	text-align: left;
